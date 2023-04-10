@@ -133,9 +133,9 @@ theme.border_width            = user.border_size ~= nil and dpi(user.border_size
                                 or dpi(0)
 theme.border_width_maximized  = dpi(theme.border_width)
 theme.fullscreen_hide_border  = true
-theme.border_color_active     = theme.titlebar_bg_focus
-theme.border_color_normal     = theme.titlebar_bg_normal
-theme.border_color_urgent     = theme.titlebar_bg_urgent
+theme.border_color_active     = theme.blk
+theme.border_color_normal     = theme.lbg
+theme.border_color_urgent     = theme.red
 
 -- Images
 ---------

@@ -60,7 +60,7 @@ local rule_name = " --class "
 if terminal == "tym" then
     rule_name = " --role "
 elseif terminal:match("xterm") then
-    rule_name = " -class "
+    rule_name = " -b 32 -class "
 end
 
 local scratch = {}
