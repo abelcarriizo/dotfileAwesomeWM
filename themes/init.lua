@@ -102,6 +102,7 @@ theme.dashboard_size      = theme.scaling * 75
 theme.item_spacing        = theme.scaling        / 1.8
 theme.item_padding        = theme.item_spacing   * 1.333
 theme.giga_padding        = theme.item_padding   * 2.5
+theme.monster_padding     = theme.giga_padding   * 2
 theme.ring_size           = theme.scaling        * 0.37
 -- The `title` and `subt` don't refer to the window titles, but rather
 -- the size's use in widgets.
@@ -161,14 +162,14 @@ theme.font                    = theme.ui_font .. "Medium " .. dpi(theme.tiny_fon
 -- Gaps
 -------
 theme.useless_gap             = user.inner_gaps ~= nil and dpi(user.inner_gaps * theme.scaling)
-                                or dpi(0.4 * theme.scaling)
+                                or dpi(theme.ring_size)
 theme.outer_gaps              = user.outer_gaps ~= nil and user.outer_gaps * theme.scaling
                                 or 3 * theme.useless_gap
 
 -- Borders & Corners 
 --------------------
 theme.border_radius           = user.border_rad ~= nil and user.border_rad * theme.scaling
-                                or 0.8 * theme.scaling
+                                or theme.item_spacing
 
 theme.rounded_clients         = false
 if user.round_client ~= nil then
@@ -272,7 +273,7 @@ theme.mstab_border_radius     = theme.rounded_clients and dpi(theme.border_radiu
 
 -- Notifications
 ----------------
-theme.notification_padding    = dpi(theme.useless_gap * 4)
+theme.notification_padding    = dpi(theme.title_font_size)
 theme.notification_spacing    = dpi(theme.notification_padding / 2)
 theme.notification_accent     = theme.grn
 
@@ -302,7 +303,7 @@ theme.layout_cornerse         = gc.recolor_image(awes_dir .. "cornersew.png",   
 -- Menu
 -------
 theme.menu_font               = theme.ui_font .. "Bold " .. dpi(theme.scaling)
-theme.menu_height             = dpi(theme.ring_size)
+theme.menu_height             = dpi(theme.monster_padding)
 theme.menu_width              = dpi(theme.menu_height * 5)
 theme.menu_fg_focus           = theme.fg_focus
 theme.menu_bg_focus           = theme.bg_focus
@@ -322,7 +323,7 @@ theme.tooltip_shape           = gears.shape.rounded_rect
 -- Snap
 -------
 theme.snap_bg                 = theme.taglist_bg_focus
-theme.snap_border_width       = dpi(theme.title_size / 2)
+theme.snap_border_width       = dpi(theme.giga_padding)
 theme.snap_shape              = gears.shape.rectangle
 
 return theme
